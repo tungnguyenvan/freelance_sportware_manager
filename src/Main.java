@@ -7,12 +7,13 @@ public class Main {
     private static Scanner mScanner;
     private static List<Sportwear> candys;
     private static FileManager mFileManager;
+    private static boolean question = true;
 
     public static void main(String[] args) throws Exception{
         mScanner = new Scanner(System.in);
         mFileManager = new FileManager();
         candys = mFileManager.ReadFile(FILE_PATH);
-        while (true){
+        while (question){
             question();
         }
     }
@@ -51,6 +52,7 @@ public class Main {
                 delete(candys);
                 break;
             case 5:
+                question = false;
                 break;
             default:
                 System.out.println("Không có nhiệm vụ! Vui lòng thử lại...");
